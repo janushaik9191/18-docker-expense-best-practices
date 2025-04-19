@@ -5,7 +5,7 @@ volumes:
   mysql:
 services:
   backend:
-    image: meerjan/backend:1.0.0
+    image: meerjan/backend:v1
     command: sh -c "sleep 10 && node /opt/backend/index.js"
     networks:
     - expense
@@ -15,7 +15,7 @@ services:
 
   # docker run -d --name mysql --network expense -v mysql:/var/lib/mysql mysql:1.0.0
   mysql:
-    image: meerjan/mysql:1.0.0
+    image: meerjan/mysql:v1
     networks:
     - expense
     container_name: mysql
@@ -23,7 +23,7 @@ services:
     - mysql:/var/lib/mysql
 
   frontend:
-    image: meerjan/frontend:1.0.0
+    image: meerjan/frontend:v1
     networks:
     - expense
     container_name: frontend
@@ -31,5 +31,3 @@ services:
     - 80:80
     depends_on:
     - backend
-  
-  

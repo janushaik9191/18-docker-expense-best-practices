@@ -20,6 +20,6 @@ RUN mkdir -p /etc/nginx/ssl/ && \
 RUN touch /var/run/nginx.pid && \
     chown -R nginx:nginx /var/run/nginx.pid /run/nginx.pid
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY nginx.conf /etc/conf.d/default.conf
+#COPY nginx.conf /etc/conf.d/default.conf
 COPY code /usr/share/nginx/html/
-USER nginx
+# USER nginx
